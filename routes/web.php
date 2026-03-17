@@ -7,6 +7,7 @@ use App\Http\Controllers\AppointmentController;
 use App\Http\Controllers\DepartmentController;
 use App\Http\Controllers\PatientController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\StaffController;
 <<<<<<< HEAD
 =======
 use App\Http\Controllers\StaffController;
