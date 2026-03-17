@@ -8,10 +8,8 @@ use App\Http\Controllers\DepartmentController;
 use App\Http\Controllers\PatientController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\StaffController;
-<<<<<<< HEAD
-=======
 use App\Http\Controllers\StaffController;
->>>>>>> c6e839e (add files)
+
 
 /* Web Routes */
 
@@ -25,9 +23,7 @@ Route::get('/dashboard', function () {
     return redirect('/redirect');
 })->middleware(['auth'])->name('dashboard');
 
-<<<<<<< HEAD
-// Dynamic pages
-=======
+
 // Find doctor pages
 >>>>>>> c6e839e (add files)
 Route::get('/find-doctor', [DoctorController::class, 'index'])->name('find-doctor');
@@ -43,7 +39,7 @@ Route::post('/book-appointment', [AppointmentController::class, 'store'])->middl
 
 Route::get('/department/{id}', [DepartmentController::class, 'show'])->name('department.show');
 
-=======
+
 Route::get('/department/{id}', [DepartmentController::class, 'show'])->name('department.show');
 
 // Book appointment
@@ -60,11 +56,9 @@ Route::post('/contact', function () {
     return back()->with('success', 'Your message has been sent successfully!');
 })->name('contact.send');
 
-<<<<<<< HEAD
-/* Redirect by role after login */
-=======
+
 // Redirect by role after login
->>>>>>> c6e839e (add files)
+
 Route::get('/redirect', function () {
     $role = auth()->user()->role;
 
@@ -121,15 +115,14 @@ Route::middleware(['auth'])->prefix('admin')->name('admin.')->group(function () 
     Route::get('/manage-services', [AdminController::class, 'manageServices'])->name('manage-services');
     Route::post('/manage-services', [AdminController::class, 'createService'])->name('manage-services.create');
     Route::delete('/manage-services/{id}', [AdminController::class, 'deleteService'])->name('manage-services.delete');
-<<<<<<< HEAD
-=======
+
     Route::patch('/manage-services/{id}', [AdminController::class, 'updateService'])->name('manage-services.update');
->>>>>>> c6e839e (add files)
+
 
     Route::get('/manage-departments', [AdminController::class, 'manageDepartments'])->name('manage-departments');
     Route::post('/manage-departments', [AdminController::class, 'createDepartment'])->name('manage-departments.create');
     Route::delete('/manage-departments/{id}', [AdminController::class, 'deleteDepartment'])->name('manage-departments.delete');
-<<<<<<< HEAD
+
 
     Route::get('/delete-patients', [AdminController::class, 'deletePatients'])->name('delete-patients');
 
@@ -137,7 +130,7 @@ Route::middleware(['auth'])->prefix('admin')->name('admin.')->group(function () 
 
     Route::patch('/manage-services/{id}', [AdminController::class, 'updateService'])->name('manage-services.update');
     Route::patch('/manage-departments/{id}', [AdminController::class, 'updateDepartment'])->name('manage-departments.update');
-=======
+
     Route::patch('/manage-departments/{id}', [AdminController::class, 'updateDepartment'])->name('manage-departments.update');
 
     Route::get('/delete-patients', [AdminController::class, 'deletePatients'])->name('delete-patients');
@@ -148,7 +141,5 @@ Route::middleware(['auth'])->prefix('admin')->name('admin.')->group(function () 
 Route::middleware(['auth', 'role:staff'])->group(function () {
     Route::get('/staff/appointments', [StaffController::class, 'index'])->name('staff.appointments.index');
     Route::post('/staff/appointments/{id}/update-status', [StaffController::class, 'updateStatus'])->name('staff.appointments.updateStatus');
->>>>>>> c6e839e (add files)
-});
 
 require __DIR__ . '/auth.php';
