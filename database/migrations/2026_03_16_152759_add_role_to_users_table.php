@@ -13,10 +13,13 @@ return new class extends Migration
         });
     }
 
-    public function down(): void
-    {
-        Schema::table('users', function (Blueprint $table) {
+
+
+public function down()
+{
+    Schema::table('users', function (Blueprint $table) {
+        if (Schema::hasColumn('users', 'role')) {
             $table->dropColumn('role');
-        });
-    }
-};
+        }
+    });
+}
