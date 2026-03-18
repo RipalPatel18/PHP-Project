@@ -23,7 +23,5 @@ cmds = [
   "php artisan view:cache"
 ]
 
-
-
 [start]
 cmd = "php artisan migrate --force && php artisan optimize:clear && php artisan optimize"
