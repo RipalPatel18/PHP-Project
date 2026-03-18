@@ -25,14 +25,14 @@ Route::get('/dashboard', function () {
 
 
 // Find doctor pages
->>>>>>> c6e839e (add files)
+
 Route::get('/find-doctor', [DoctorController::class, 'index'])->name('find-doctor');
 Route::get('/doctor-profile/{id}', [DoctorController::class, 'show'])->name('doctor-profile');
 
 // Services and departments
 Route::get('/services', [ServiceController::class, 'index'])->name('services');
 Route::get('/services/{id}', [ServiceController::class, 'show'])->name('service.show');
-<<<<<<< HEAD
+
 
 Route::get('/book-appointment', [AppointmentController::class, 'create'])->name('book-appointment');
 Route::post('/book-appointment', [AppointmentController::class, 'store'])->middleware('auth')->name('book-appointment.store');
@@ -46,7 +46,7 @@ Route::get('/department/{id}', [DepartmentController::class, 'show'])->name('dep
 Route::get('/book-appointment', [AppointmentController::class, 'create'])->name('book-appointment');
 Route::post('/book-appointment', [AppointmentController::class, 'store'])->middleware('auth')->name('book-appointment.store');
 
->>>>>>> c6e839e (add files)
+
 // Static pages
 Route::get('/contact', function () {
     return view('pages.contact');
