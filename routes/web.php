@@ -141,5 +141,6 @@ Route::middleware(['auth'])->prefix('admin')->name('admin.')->group(function () 
 Route::middleware(['auth', 'role:staff'])->group(function () {
     Route::get('/staff/appointments', [StaffController::class, 'index'])->name('staff.appointments.index');
     Route::post('/staff/appointments/{id}/update-status', [StaffController::class, 'updateStatus'])->name('staff.appointments.updateStatus');
+});
 
 require __DIR__ . '/auth.php';
